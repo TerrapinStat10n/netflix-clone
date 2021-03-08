@@ -21,7 +21,7 @@ class NfCarousel extends Component {
 
   async getMovies() {
     await axios
-      .get("http://netflix-clone-casey-bloom.herokuapp.com/api/NfMovies", {
+      .get("https://netflix-clone-api-cb.herokuapp.com/api/NfMovies", {
         headers: {
           authorization: "Token " + this.state.token,
         },

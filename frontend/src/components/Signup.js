@@ -36,7 +36,7 @@ class Signup extends React.Component {
           password2: this.state.credentials.confirm,
         };
 
-        fetch("http://netflix-clone-casey-bloom.herokuapp.com/api/rest-auth/registration/", {
+        fetch("https://netflix-clone-api-cb.herokuapp.com/api/rest-auth/registration/", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(user),

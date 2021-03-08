@@ -32,7 +32,7 @@ class Login extends React.Component {
         username: this.state.email,
         password: this.state.password,
       };
-      fetch("https://netflix-clone-casey-bloom.herokuapp.com/api/rest-auth/login/", {
+      fetch("https://netflix-clone-api-cb.herokuapp.com/api/rest-auth/login/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(user),

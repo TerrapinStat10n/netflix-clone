@@ -14,7 +14,7 @@ const SideDrawer = props => {
 
     const submitHandler = e => {
       e.preventDefault();
-      fetch('http://netflix-clone-casey-bloom.herokuapp.com/api/rest-auth/logout/', {
+      fetch('https://netflix-clone-api-cb.herokuapp.com/api/rest-auth/logout/', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
       })
