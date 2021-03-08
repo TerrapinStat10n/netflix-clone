@@ -1,0 +1,32 @@
+.toolbar {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: fixed;
+  background-color: black;
+  height: 80px;
+  z-index: 5;
+}
+
+.drawer {
+  display: flex;
+  margin-top: 0.5rem;
+  margin-left: 0.5rem;
+}
+
+.toolbar_navigation {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.toolbar__logo {
+  margin-left: 1rem;
+}
+
+.img-drop {
+  width: 135px;
+  display: flex;
+  margin: 12px 0px 0px 30px;
+}

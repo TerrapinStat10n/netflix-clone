@@ -1,0 +1,42 @@
+.film-img {
+    width: 100%;
+    height: 400px;
+}
+
+.film-img-div {
+    position: relative;
+    width: 100%;
+}
+
+.play-button {
+    position: absolute;
+    top: 60%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: red;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 18px 30px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+.play-button:hover {
+    background-color: green;
+    border: 1px solid black;
+}
+.film-title {
+    position: absolute;
+    top: 40%;
+    left: 6%;
+    color: black;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.film-desc {
+    font-size: 24px;
+}
