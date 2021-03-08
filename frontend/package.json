@@ -19,6 +19,7 @@
     "redux": "^4.0.5",
     "redux-persist": "^6.0.0",
     "redux-persist-middleware": "^1.0.1",
+    "swiper": "^6.5.0",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
