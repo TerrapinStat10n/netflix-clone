@@ -11,18 +11,21 @@ class NfCarousel extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      token: this.props.token
+      token: this.props.token,
+      numSlides: 5
     };
   }
 
   componentWillMount() {
     this.getMovies();
-    this.getOS();
+    let os;
+    os = this.getOS();
+    os === 'Android' || 'iOS' ? this.setState({numSlides: 3}) : this.setState({numSlides: 5});
   }
 
   async getMovies() {
     await axios
-      .get("http://localhost:8000/api/NfMovies", {
+      .get("https://netflix-clone-api-cb.herokuapp.com/api/NfMovies", {
         headers: {
           authorization: "Token " + this.state.token,
         },
@@ -56,13 +59,10 @@ class NfCarousel extends Component {
       os = 'Linux';
     }
   
-    os === 'Android' || 'iOS' ? this.setState({numSlides: 3}) : this.setState({numSlides: 5});
-    return os
+    return os;
   }
 
   render() {
-    
-
     let swiper1 = new Swiper(".swiper1", {
       slidesPerView: this.state.numSlides,
       spaceBetween: 10,
