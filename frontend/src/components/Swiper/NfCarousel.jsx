@@ -20,7 +20,7 @@ class NfCarousel extends Component {
     this.getMovies();
     let os;
     os = this.getOS();
-    os === 'Android' || 'iOS' ? this.setState({numSlides: 3}) : this.setState({numSlides: 5});
+    os === 'Android' ? this.setState({numSlides: 3}) : this.setState({numSlides: 5});
   }
 
   async getMovies() {
