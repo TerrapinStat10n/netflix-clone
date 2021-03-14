@@ -1,5 +1,6 @@
 * {
   font-family: "CircularStd", "Arial Narrow", Arial, sans-serif;
+  background: #000;
 }
 
 .App-logo {
@@ -230,7 +231,8 @@ ul.hamburgerDropDown {
   padding: 10px;
 }
 
-.signup-error, .login-error {
+.signup-error,
+.login-error {
   color: white;
   width: 100%;
   text-align: center;
