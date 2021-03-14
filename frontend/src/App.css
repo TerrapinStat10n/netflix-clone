@@ -1,6 +1,5 @@
 * {
   font-family: "CircularStd", "Arial Narrow", Arial, sans-serif;
-  background: #000;
 }
 html {
   font-size: 14px;
@@ -107,12 +106,9 @@ h4 {
   }
 }
 
-
-
 .form-field-a {
   margin-top: 1.43rem;
 }
-
 
 .my_form {
   width: 100%;
