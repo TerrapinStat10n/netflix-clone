@@ -11,12 +11,16 @@ class NfCarousel extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      token: this.props.token
+      token: this.props.token,
+      numSlides: 5
     };
   }
 
   componentWillMount() {
     this.getMovies();
+    let os;
+    os = this.getOS();
+    os === 'Android' ? this.setState({numSlides: 3}) : this.setState({numSlides: 5});
   }
 
   async getMovies() {
@@ -35,9 +39,32 @@ class NfCarousel extends Component {
       });
   }
 
+  getOS() {
+    var userAgent = window.navigator.userAgent,
+        platform = window.navigator.platform,
+        macosPlatforms = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'],
+        windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE'],
+        iosPlatforms = ['iPhone', 'iPad', 'iPod'],
+        os = null;
+  
+    if (macosPlatforms.indexOf(platform) !== -1) {
+      os = 'Mac OS';
+    } else if (iosPlatforms.indexOf(platform) !== -1) {
+      os = 'iOS';
+    } else if (windowsPlatforms.indexOf(platform) !== -1) {
+      os = 'Windows';
+    } else if (/Android/.test(userAgent)) {
+      os = 'Android';
+    } else if (!os && /Linux/.test(platform)) {
+      os = 'Linux';
+    }
+  
+    return os;
+  }
+
   render() {
     let swiper1 = new Swiper(".swiper1", {
-      slidesPerView: 5,
+      slidesPerView: this.state.numSlides,
       spaceBetween: 10,
       loop: true,
       navigation: {
@@ -46,7 +73,7 @@ class NfCarousel extends Component {
       },
     });
     let swiper2 = new Swiper(".swiper2", {
-      slidesPerView: 5,
+      slidesPerView: this.state.numSlides,
       spaceBetween: 10,
       loop: true,
       navigation: {
@@ -55,7 +82,7 @@ class NfCarousel extends Component {
       },
     });
     let swiper3 = new Swiper(".swiper3", {
-      slidesPerView: 5,
+      slidesPerView: this.state.numSlides,
       spaceBetween: 10,
       loop: true,
       navigation: {
