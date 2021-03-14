@@ -19,7 +19,7 @@ class MovieDetails extends React.Component {
   }
 
     componentWillMount() {
-      this.setState({currentMovie: movies.find(movie => movie.id === parseInt(currentMovieId)
+      this.setState({currentMovie: this.state.movies.find(movie => movie.id === parseInt(this.state.currentMovieId)
         )})
     }
     drawerToggleClickHandler = () => {
