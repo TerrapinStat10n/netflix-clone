@@ -10,7 +10,7 @@ const Toolbar = (props) => (
                 <DrawerToggleButton click={props.drawerClickHandler} />
                 <div className="toolbar__logo">
                     <a href="/">
-                        <img className="img-drop" src="http://localhost:3000/logo.png" alt="logo" />
+                        <img className="img-drop" src="https://res.cloudinary.com/djhvo5mnu/image/upload/v1615759852/logo_cnhfub.png" alt="logo" />
                     </a>
                 </div>
             </div>
