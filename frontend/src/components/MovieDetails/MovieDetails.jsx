@@ -12,11 +12,16 @@ class MovieDetails extends React.Component {
     const { match: { params } } = this.props
     this.state = {
       sideDrawerOpen: false,
-      currentMovie: params.id,
-      movies: this.props.movies
+      currentMovieId: params.id,
+      movies: this.props.movies,
+      currentMovie: {}
     };
   }
 
+    componentWillMount() {
+      this.setState({currentMovie: movies.find(movie => movie.id === parseInt(currentMovieId)
+        )})
+    }
     drawerToggleClickHandler = () => {
         this.setState(prevState => {
           return { sideDrawerOpen: !prevState.sideDrawerOpen }
@@ -34,7 +39,6 @@ class MovieDetails extends React.Component {
             backdrop = <Backdrop click={this.backdropClickHandler} />
           }
 
-        console.log(this.state.movies[this.state.currentMovie - 1].name);
         return (
             <div style={{ height: '100%' }}>
                 <Toolbar drawerClickHandler={this.drawerToggleClickHandler} />
@@ -44,12 +48,12 @@ class MovieDetails extends React.Component {
                     <main style={{marginTop: '90px'}}>
                       <div>
                         <div className="film-img-div">
-                          <img className="film-img" src={this.state.movies[this.state.currentMovie - 1].link} alt="Test"/>
-                          <div className="film-title">{this.state.movies[this.state.currentMovie - 1].name}</div>
+                          <img className="film-img" src={this.state.currentMovie.link} alt="Test"/>
+                          <div className="film-title">{this.state.currentMovie.name}</div>
                           <button className="play-button">PLAY</button>
                         </div>
                         <div className="film-desc">
-                          {this.state.movies[this.state.currentMovie - 1].description}
+                          {this.state.currentMovie.description}
                         </div>
                       </div>
                     </main>
