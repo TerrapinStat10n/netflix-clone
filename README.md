@@ -42,15 +42,12 @@ Full Stack Netflix clone project
 
 
 
-
-### Test Account login
-#### Username: test@test.com
-#### Password: testaccount
-
 ## Contact:
 ### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Casey Bloom
 ### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CaseyBloom@gmail.com
-
+### Test Account login
+#### Username: test@test.com
+#### Password: testaccount
 
 ## Project Link: https://netflix-clone-client.herokuapp.com/
 
