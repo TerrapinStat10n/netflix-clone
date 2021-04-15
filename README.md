@@ -41,9 +41,11 @@ Full Stack Netflix clone project
 #### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; npm start
 
 
-#### Test Account login
-## Username: test@test.com
-## Password: testaccount
+
+
+### Test Account login
+#### Username: test@test.com
+#### Password: testaccount
 
 ## Contact:
 ### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Casey Bloom
