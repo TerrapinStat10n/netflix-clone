@@ -21,6 +21,7 @@ class Signup extends React.Component {
 
   submitHandler = (e) => {
     e.preventDefault();
+    this.setState({ signupError: false }, () => console.log(this.state.signupError));
     console.log(this.state.credentials.email + " Email from credentials");
     if (
       this.state.credentials.email.match
