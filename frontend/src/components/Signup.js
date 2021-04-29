@@ -48,7 +48,7 @@ class Signup extends React.Component {
             } else {
               console.log(data.key);
 
-              if (data.email[0] === 'A user is already registered with this e-mail address.') {
+              if (typeof data.password1 !== "undefined" && data.email[0] === 'A user is already registered with this e-mail address.') {
                 this.setState({ signupError: true }, () => console.log(this.state.signupError));
                 this.setState({ signupErrorMessage: "A user is already registered with this e-mail address."});
               } else {
@@ -56,7 +56,7 @@ class Signup extends React.Component {
                     this.setState({ signupError: true }, () => console.log(this.state.signupError));
                     this.setState({ signupErrorMessage: "This password is too short. It must contain at least 8 characters."});
                   } else {
-                    if (data.password1[0] === 'This password is too common.') {
+                    if (typeof data.password1 !== "undefined" && data.password1[0] === 'This password is too common.') {
                       this.setState({ signupError: true }, () => console.log(this.state.signupError));
                       this.setState({ signupErrorMessage: "This password is too common."});
                     } else {
