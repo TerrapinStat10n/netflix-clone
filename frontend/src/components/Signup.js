@@ -71,8 +71,6 @@ class Signup extends React.Component {
                 history.push("/login");
               }
             }
-                }
-              }
           })
           .catch((error) => console.error(error));
       } else {
