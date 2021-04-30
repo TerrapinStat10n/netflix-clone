@@ -49,24 +49,28 @@ class Signup extends React.Component {
             } else {
               console.log(data.key);
 
-              if (data.email[0] === 'A user is already registered with this e-mail address.') {
-                this.setState({ signupError: true }, () => console.log(this.state.signupError));
-                this.setState({ signupErrorMessage: "A user is already registered with this e-mail address."});
+              if (data.email) {
+                this.setState({ signupError: true }, () =>
+                  console.log(this.state.signupError)
+                );
+                this.setState({
+                  signupErrorMessage:
+                    "A user is already registered with this e-mail address.",
+                });
+              } else if (data.password1) {
+                this.setState({ signupError: true }, () =>
+                  console.log(this.state.signupError)
+                );
+                this.setState({ signupErrorMessage: data.password1[0] });
               } else {
-                  if (typeof data.password1 !== "undefined" && data.password1[0] === 'This password is too short. It must contain at least 8 characters.') {
-                    this.setState({ signupError: true }, () => console.log(this.state.signupError));
-                    this.setState({ signupErrorMessage: "This password is too short. It must contain at least 8 characters."});
-                  } else {
-                    if (data.password1[0] === 'This password is too common.') {
-                      this.setState({ signupError: true }, () => console.log(this.state.signupError));
-                      this.setState({ signupErrorMessage: "This password is too common."});
-                    } else {
-                      this.setState({ signupError: false }, () => console.log(this.state.signupError));
-                      this.setState({ token: data.key})
-                      const { history } = this.props;
-                      history.push("/login");
-                    }
-                  }
+                this.setState({ signupError: false }, () =>
+                  console.log(this.state.signupError)
+                );
+                this.setState({ token: data.key });
+                const { history } = this.props;
+                history.push("/login");
+              }
+            }
                 }
               }
           })
