@@ -79,6 +79,12 @@ h4 {
   margin-left: auto;
 }
 
+@media only screen and (max-width: 400px) {
+  .email-input {
+    width: 14rem;
+  }
+}
+
 .form-field-a,
 .form-field-b,
 .form-field-c {
